@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self';" />
+<title>H-Notepad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">H</span>
+        <span class="brand-name">Notepad</span>
+      </div>
+      <div class="topbar-actions">
+        <button id="btn-new-tab" class="btn btn-accent" title="New tab (Ctrl+T)">+ Tab</button>
+        <button id="btn-save-tab" class="btn" title="Save tab as .txt + .hnote (Ctrl+S)">Save</button>
+        <button id="btn-open-hnote" class="btn" title="Open a .hnote file">Open .hnote</button>
+        <button id="btn-open-txt" class="btn" title="Import a .txt file (re-sectioned)">Import .txt</button>
+        <button id="btn-settings" class="btn btn-ghost" title="Save folder settings">⚙ Folders</button>
+        <button id="btn-theme" class="btn btn-ghost" title="Toggle light/dark">☾ Dark</button>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <nav class="sidebar" id="tab-list" aria-label="Tabs"></nav>
+
+      <main class="content" id="section-list"></main>
+    </div>
+
+    <footer class="statusbar" id="statusbar">Ready</footer>
+  </div>
+
+  <div id="settings-modal" class="modal-overlay hidden">
+    <div class="modal">
+      <h2>Save Folders</h2>
+      <p class="modal-hint">Chosen once, then reused silently for every Save.</p>
+      <div class="modal-row">
+        <span class="modal-label">.txt folder</span>
+        <span id="txt-folder-path" class="modal-path">Not set</span>
+        <button id="btn-pick-txt" class="btn">Choose…</button>
+      </div>
+      <div class="modal-row">
+        <span class="modal-label">.hnote folder</span>
+        <span id="hnote-folder-path" class="modal-path">Not set</span>
+        <button id="btn-pick-hnote" class="btn">Choose…</button>
+      </div>
+      <div class="modal-actions">
+        <button id="btn-close-settings" class="btn btn-accent">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

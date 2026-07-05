@@ -1,0 +1,51 @@
+{
+  "name": "h-notepad",
+  "productName": "H-Notepad",
+  "version": "1.0.0",
+  "description": "A tabbed notepad that preserves colored/rich text formatting and keeps sessions like native Notepad.",
+  "main": "main.js",
+  "author": "Happy",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.happy.hnotepad",
+    "productName": "H-Notepad",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": ["nsis"],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "H-Notepad"
+    },
+    "mac": {
+      "target": ["dmg"],
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": ["AppImage"],
+      "icon": "assets/icon.png"
+    }
+  }
+}
