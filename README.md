@@ -5,6 +5,8 @@ each tab's tabs+sections open across restarts (like native Notepad), and
 saves in a dual-file format: a portable plain `.txt` and a full-fidelity
 `.hnote` sidecar.
 
+#Link - https://github.com/Hit88888/H-Notepad/releases/download/v1.1.2/H-Notepad.Setup.1.1.2.exe
+
 #Link - https://github.com/Hit88888/H-Notepad/releases/download/v1.0.8/H-Notepad.Setup.1.0.8.exe
 
 #Link - https://github.com/Hit88888/H-Notepad/releases/download/v1.0.1/H-Notepad.Setup.1.0.1.exe
